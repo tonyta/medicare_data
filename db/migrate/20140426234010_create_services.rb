@@ -5,6 +5,6 @@ class CreateServices < ActiveRecord::Migration
       t.string :hcpcs_description
     end
 
-    add_index :services, :hcpcs_code
+    # add_index :services, :hcpcs_code
   end
 end

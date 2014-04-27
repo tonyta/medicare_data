@@ -16,6 +16,6 @@ class CreateProvidedServices < ActiveRecord::Migration
       t.decimal :stdev_medicare_payment_amt, precision: 20, scale: 10
     end
 
-    add_index :provided_services, [:service_id, :provider_id]
+    # add_index :provided_services, [:service_id, :provider_id]
   end
 end

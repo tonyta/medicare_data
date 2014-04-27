@@ -19,6 +19,6 @@ class CreateProviders < ActiveRecord::Migration
       t.string :place_of_service
     end
 
-    add_index :providers, :npi
+    # add_index :providers, :npi
   end
 end
