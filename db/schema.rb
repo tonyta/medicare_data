@@ -30,8 +30,6 @@ ActiveRecord::Schema.define(version: 20140426234017) do
     t.decimal "stdev_medicare_payment_amt",   precision: 20, scale: 10
   end
 
-  add_index "provided_services", ["service_id", "provider_id"], name: "index_provided_services_on_service_id_and_provider_id", using: :btree
-
   create_table "providers", force: true do |t|
     t.integer "npi"
     t.string  "nppes_provider_last_org_name"
@@ -51,13 +49,9 @@ ActiveRecord::Schema.define(version: 20140426234017) do
     t.string  "place_of_service"
   end
 
-  add_index "providers", ["npi"], name: "index_providers_on_npi", using: :btree
-
   create_table "services", force: true do |t|
     t.string "hcpcs_code"
     t.string "hcpcs_description"
   end
-
-  add_index "services", ["hcpcs_code"], name: "index_services_on_hcpcs_code", using: :btree
 
 end
