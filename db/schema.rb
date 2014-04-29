@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140426234017) do
+ActiveRecord::Schema.define(version: 20140429013928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(version: 20140426234017) do
     t.decimal "average_medicare_payment_amt", precision: 20, scale: 10
     t.decimal "stdev_medicare_payment_amt",   precision: 20, scale: 10
   end
+
+  add_index "provided_services", ["provider_id"], name: "index_provided_services_on_provider_id", using: :btree
+  add_index "provided_services", ["service_id", "provider_id"], name: "index_provided_services_on_service_id_and_provider_id", using: :btree
 
   create_table "providers", force: true do |t|
     t.integer "npi"
@@ -49,9 +52,17 @@ ActiveRecord::Schema.define(version: 20140426234017) do
     t.string  "place_of_service"
   end
 
+  add_index "providers", ["npi"], name: "index_providers_on_npi", using: :btree
+  add_index "providers", ["nppes_provider_city"], name: "index_providers_on_nppes_provider_city", using: :btree
+  add_index "providers", ["nppes_provider_country"], name: "index_providers_on_nppes_provider_country", using: :btree
+  add_index "providers", ["nppes_provider_state"], name: "index_providers_on_nppes_provider_state", using: :btree
+  add_index "providers", ["nppes_provider_zip"], name: "index_providers_on_nppes_provider_zip", using: :btree
+
   create_table "services", force: true do |t|
     t.string "hcpcs_code"
     t.string "hcpcs_description"
   end
+
+  add_index "services", ["hcpcs_code"], name: "index_services_on_hcpcs_code", using: :btree
 
 end
