@@ -44,7 +44,7 @@ def seed_line(data_array)
   } % ([@provider_id_counter, @service_id] + data_array[18..26]) )
 end
 
-tsv = Rails.root.join('db', 'data', 'med_truncated.txt')
+tsv = Rails.root.join('db', 'data', 'med_full.txt')
 parsed_tsv = CSV.open(tsv, col_sep: "\t")
 
 parsed_tsv.readline # skips line
@@ -53,7 +53,7 @@ parsed_tsv.readline # skips line
 start_time = Time.now
 
 parsed_tsv.each_entry.with_index do |entry, index|
-  puts "Now seeding record no. #{index}" if index % 1000 == 0
+  puts "Now seeding record no. #{index}" if index % 50_000 == 0
   seed_line(entry)
 end
 
