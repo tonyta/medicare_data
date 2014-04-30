@@ -1,13 +1,67 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
  *= require_self
- *= require_tree .
- */
+*/
+
+body {
+  background-color: steelblue;
+}
+
+.container {
+  width: 600px;
+  background-color: white;
+  margin: 40px auto;
+  padding: 40px;
+}
+
+.text {
+  margin-left: 60px;
+  border: 2px solid steelblue;
+}
+
+.button {
+  border: none;
+  margin-left: 40px;
+  background-color: steelblue;
+  color: white;
+}
+
+form input {
+  font-size: 1.4em;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0;
+  padding: 4px;
+  width: 200px;
+  height: 40px;
+}
+
+h1 {
+  text-align: center;
+  font: 30px sans-serif;
+  color: steelblue;
+  margin-top: 0;
+}
+
+h2 {
+  text-align: center;
+  font: 24px sans-serif;
+  color: steelblue;
+}
+
+.chart rect {
+  fill: steelblue;
+}
+
+.chart text {
+  font: 10px sans-serif;
+}
+
+.value-text {
+  fill: white;
+  text-anchor: end;
+}
+
+.price-text {
+  fill: steelblue;
+  text-anchor: start;
+}

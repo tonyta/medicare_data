@@ -1,4 +1,8 @@
 MedicareData::Application.routes.draw do
+  get '/' => 'home#index'
+
+  get '/hcpcs' => 'home#hcpcs'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
