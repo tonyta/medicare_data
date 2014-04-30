@@ -17,3 +17,8 @@
 
 # Ignore full med data (HUGE!)
 /db/data/med_full.txt
+
+# Ignore SQL backups (HUGE!)
+/backup/*
+
+.DS_STORE
