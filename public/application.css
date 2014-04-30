@@ -1,0 +1,67 @@
+/*
+ *= require_self
+*/
+
+body {
+  background-color: steelblue;
+}
+
+.container {
+  width: 600px;
+  background-color: white;
+  margin: 40px auto;
+  padding: 40px;
+}
+
+.text {
+  margin-left: 60px;
+  border: 2px solid steelblue;
+}
+
+.button {
+  border: none;
+  margin-left: 40px;
+  background-color: steelblue;
+  color: white;
+}
+
+form input {
+  font-size: 1.4em;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0;
+  padding: 4px;
+  width: 200px;
+  height: 40px;
+}
+
+h1 {
+  text-align: center;
+  font: 30px sans-serif;
+  color: steelblue;
+  margin-top: 0;
+}
+
+h2 {
+  text-align: center;
+  font: 24px sans-serif;
+  color: steelblue;
+}
+
+.chart rect {
+  fill: steelblue;
+}
+
+.chart text {
+  font: 10px sans-serif;
+}
+
+.value-text {
+  fill: white;
+  text-anchor: end;
+}
+
+.price-text {
+  fill: steelblue;
+  text-anchor: start;
+}
